@@ -98,3 +98,7 @@ RSpec.configure do |config|
   Kernel.srand config.seed
 =end
 end
+
+Dir.glob('./**/*.rb').each do |file|
+  require file unless file.start_with?('./spec')
+end
